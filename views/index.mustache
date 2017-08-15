@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Create a User Directory</title>
+</head>
+<body>
+    <div class="results">
+    <h1>User Directory</h1>
+        {{#users}}
+    <a href="/listing/{{id}}">
+            <div class="avatar">
+                <img src="{{avatar}}" alt="">
+            </div>
+            <div class="name">
+                {{name}}
+            </div>
+
+            <!-- <div class="education">
+            {university}
+        </div> -->
+        <div class="job">{{#job}}
+            <p> {{job}}, {{company}}  </p>
+            {{/job}}
+            {{^job}}
+            <p id="available"> Available for hire</p>
+            {{/job}}
+            {{/users}}
+        </div>
+    </a>
+</div>
+</body>
+</html>
