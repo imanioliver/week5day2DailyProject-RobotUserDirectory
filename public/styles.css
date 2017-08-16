@@ -1,0 +1,16 @@
+body {
+    background: blue;
+}
+
+
+h1 {
+    text-align: center;
+}
+
+.results {
+    border: solid;
+    border-color: lightgray;
+    color: darkgray;
+
+
+}

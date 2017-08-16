@@ -20,6 +20,7 @@ app.listen(3000, function () {
 
 
 app.get('/listing/:id', function(req, res){
-    console.log(req.params.id)
+    console.log(req.params.id);
+    res.render('userprofile', {users: users});
     res.send("YAY");
 });
