@@ -3,12 +3,15 @@
 {{#users}}
     <head>
         <meta charset="utf-8">
-        <title> {{name}}'s Profile</title>
-        <link rel="stylesheet" href="../public/styles.css">
+        <title> {{#name}}{{name}}{{/name}}'s Profile</title>
+        <link rel="stylesheet" href="/styles.css">
     </head>
     <body>
 
         <div class="userInfo">
+            <div class="avatar">
+                <img src="{{avatar}}" alt="avatar">
+            </div>
             <h1>{{name}}</h1>
             <section>{{address.city}}, {{address.state_or_province}} | {{#job}}
                  {{job}}, {{company}}

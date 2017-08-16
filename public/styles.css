@@ -1,5 +1,5 @@
 body {
-    background: blue;
+    /*background: blue;*/
 }
 
 
@@ -8,9 +8,23 @@ h1 {
 }
 
 .results {
-    border: solid;
-    border-color: lightgray;
-    color: darkgray;
 
+    display: flex;
+
+}
+
+img {
+
+    border: black;
+    border-radius: 50%;
+}
+
+
+#listing {
+    border: solid;
+    border-color: black;
+    color: darkgray;
+    /*background-color: lightpink;*/
+    display: flex;
 
 }
