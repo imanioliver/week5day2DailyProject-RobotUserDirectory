@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+{{#users}}
+    <head>
+        <meta charset="utf-8">
+        <title> {{name}}'s Profile</title>
+        <link rel="stylesheet" href="../public/styles.css">
+    </head>
+    <body>
+
+        <div class="userInfo">
+            <h1>{{name}}</h1>
+            <section>{{address.city}}, {{address.state_or_province}} | {{#job}}
+                 {{job}}, {{company}}
+                {{/job}}
+                {{^job}}
+                 Available for hire
+                {{/job}}</section>
+
+        <table id="table">
+
+            {{#education}}
+        <tr>
+            <td> <strong>Education</strong></td>
+            <td>{{university}}</td>
+        </tr>
+        {{/education}}
+        <tr>
+            <td> <strong>Skills</strong></td>
+            <td>{{skills}}</td>  <!-- not sure what this should be since skills is an array -->
+        </tr>
+    </table>
+    </div>
+    </body>
+{{/users}}
+</html>
