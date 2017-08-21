@@ -1,19 +1,11 @@
-<!DOCTYPE html>
-<html>
-{{#users}}
-    <head>
-        <meta charset="utf-8">
-        <title> {{#name}}{{name}}{{/name}}'s Profile</title>
-        <link rel="stylesheet" href="/styles.css">
-    </head>
-    <body>
-
+{{#user}}
+        <a href="#">
         <div class="userInfo">
             <div class="avatar">
                 <img src="{{avatar}}" alt="avatar">
             </div>
             <h1>{{name}}</h1>
-            <section>{{address.city}}, {{address.state_or_province}} | {{#job}}
+            <section>{{address.city}}}, {{address.state_or_province}} | {{#job}}
                  {{job}}, {{company}}
                 {{/job}}
                 {{^job}}
@@ -34,6 +26,5 @@
         </tr>
     </table>
     </div>
-    </body>
+    </a>
 {{/users}}
-</html>

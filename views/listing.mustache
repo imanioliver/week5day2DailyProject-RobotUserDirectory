@@ -1,0 +1,17 @@
+
+            {{#users}}
+                <a class="listingLink" href="/listing/{{id}}">
+                    <div class="listing">
+                        <img class="avatar" src="{{avatar}}" alt="avatar">
+
+                        <p class="name">{{name}}</p>
+
+                        {{#job}}
+                            <p> {{.}}, {{company}}  </p>
+                                {{/job}}
+                                {{^job}}
+                            <p class="available"> Available for hire</p>
+                                {{/job}}
+                    </div>
+                </a>
+            {{/users}}

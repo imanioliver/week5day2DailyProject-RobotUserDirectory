@@ -1,0 +1,53 @@
+* {
+    border: solid;
+    border-color: red;
+}
+
+body {
+    /*display:flex;
+    justify-content: center;
+    /*background: blue;*/*/
+}
+
+
+h1 {
+    text-align: center;
+}
+
+/*.results {
+
+    display: flex;
+
+}*/
+
+img {
+
+    border: black;
+    border-radius: 50%;
+}
+
+
+.results {
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+
+}
+
+
+.listing {
+    border: solid;
+    border-color: black;
+    /*flex-basis: 1 20%;*/
+
+}
+
+.listingLink{
+    flex-basis: 1 20%;
+}
+
+.avatar {
+    border-color: green. ;
+    border: solid;
+    border-radius: 50%;
+}
