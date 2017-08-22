@@ -1,7 +1,6 @@
-* {
-    border: solid;
-    border-color: red;
-}
+/** {
+    border: 2px solid red;
+}*/
 
 body {
     /*display:flex;
@@ -20,9 +19,12 @@ h1 {
 
 }*/
 
-img {
 
-    border: black;
+
+
+.listingAvatar {
+    border: 2px dotted lightgray;
+    /*border: black;*/
     border-radius: 50%;
 }
 
@@ -30,24 +32,53 @@ img {
 .results {
     display: flex;
     flex-direction: row;
-    width: 40%;
+    flex-wrap: wrap;
+    /*width: 40%;*/
+    border: 1px solid green;
+    justify-content: space-around;
+    word-wrap: normal;
 
 }
 
+a {
+    display: flex;
+    border: 1px solid magenta;
+    border-radius: 2px;
+    width: 40px:
+    /*padding: 5%;*/
+    margin: 5%;
+    flex-basis: 1 1 15%;
+    word-wrap: normal;
+}
 
-.listing {
+
+img {
+    display: flex;
+    justify-content: center;
+
+}
+
+.userInfo {
     border: solid;
-    border-color: black;
+    border-color: green;
+    width: 200px;
+    height: 500px;
+    word-wrap: normal;
+
     /*flex-basis: 1 20%;*/
 
+}
+
+#table {
+    word-wrap: break-word;
 }
 
 .listingLink{
     flex-basis: 1 20%;
 }
-
+/*
 .avatar {
     border-color: green. ;
     border: solid;
     border-radius: 50%;
-}
+}*/
