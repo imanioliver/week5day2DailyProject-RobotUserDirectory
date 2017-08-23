@@ -52,6 +52,7 @@ header {
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 10pt;
+    font-weight: lighter;
     /*display:flex;
     justify-content: center;
     /*background: blue;*/
@@ -69,6 +70,8 @@ h2 {
     font-size: 90px;
     text-align: center;
     color: #0984c1;
+    padding-top: 0;
+    padding-bottom: 0;
     /*font-style: italic;*/
 }
 
@@ -92,6 +95,11 @@ h2 {
 
 }
 
+
+a{
+    text-decoration: none;
+}
+
 /*a {
     display: flex;
     /*border: 1px solid magenta;*/
@@ -111,6 +119,9 @@ height: 50px;
 width: 50px;
 }
 
+#redAvailable{
+    color: #9e060d;
+}
 
 
 img {
