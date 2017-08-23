@@ -1,25 +1,76 @@
 /** {
     border: 2px solid red;
 }*/
+html {
+    background-color: #deeff7;
+
+}
+header {
+    background-color: #0984c1;
+    height: 85px;
+    width: 120%;
+    padding: 4%;
+    /*padding-left: 17%;*/
+    /*display: flex;*/
+    /*justify-content: space-around;*/
+    /*align-items: center;*/
+    /*flex-direction: row;*/
+
+}
+
+
+ nav a {
+    color: white;
+    border: solid;
+    border-color: white;
+    border-width: thin;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 4%;
+    padding-right: 4%;
+    margin: 3%;
+    border-radius: 5px;
+}
+
+
+ nav a:hover {
+     color: white;
+     background-color: #34AFEC;
+ }
+/*nav a{
+    color: white;
+    border: solid;
+    border-color: white;
+    border-width: thin;
+    padding: 2%;
+    margin: 3%;
+    border-radius: 5px;
+    width: 25%
+}*/
+
 
 body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10pt;
     /*display:flex;
     justify-content: center;
-    /*background: blue;*/*/
+    /*background: blue;*/
+
 }
 
 
 h1 {
-    text-align: center;
+     font-size: 20px;
+     text-align: center;
 }
 
-/*.results {
+h2 {
 
-    display: flex;
-
-}*/
-
-
+    font-size: 90px;
+    text-align: center;
+    color: #0984c1;
+    /*font-style: italic;*/
+}
 
 
 .listingAvatar {
@@ -34,40 +85,91 @@ h1 {
     flex-direction: row;
     flex-wrap: wrap;
     /*width: 40%;*/
-    border: 1px solid green;
+    /*border: 1px solid green;*/
     justify-content: space-around;
     word-wrap: normal;
+    align-items: center;
 
 }
 
-a {
+/*a {
     display: flex;
-    border: 1px solid magenta;
-    border-radius: 2px;
-    width: 40px:
+    /*border: 1px solid magenta;*/
+    /*border-radius: 2px;*/
+    /*width: 40px:*/
     /*padding: 5%;*/
-    margin: 5%;
-    flex-basis: 1 1 15%;
-    word-wrap: normal;
+    /*margin: 5%;*/
+    /*flex-basis: 1 1 15%;*/
+    /*word-wrap: normal;*/
+/*}*/
+
+a img {
+padding: 4%;
+margin:0%;
+align-self: flex-start;
+height: 50px;
+width: 50px;
 }
+
 
 
 img {
+    height: 150px;
+    width: 150px;
+    align-self: center;
+    margin-left: 14%;
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    /*padding-left: 10%;*/
+
+}
+
+#profileLink {
+    border: none;
+    border-radius: 6px;
+    background-color: white;
+    color: #CDECFB;
+
+}
+
+#profileLink:hover {
+    background-color: ##357391;
+    color: white;
+}
+
+.avatar {
     display: flex;
-    justify-content: center;
+    /*justify-content: center;*/
+    align-self: center;
+    width: 20px;
 
 }
 
 .userInfo {
+    /*display: flex;*/
     border: solid;
-    border-color: green;
+    border-color: darkgray;
+    border-width: thin;
+    border-radius: 10px;
     width: 200px;
-    height: 500px;
+    height: 400px;
     word-wrap: normal;
-
-    /*flex-basis: 1 20%;*/
+    padding: 2%;
+    margin:1%;
+    background-color: #34AFEC;
+    /*align-content: center;*/
 
 }
+
+.userInfo:hover {
+    background-color: #0984c1;
+    cursor: pointer;
+    animation-name: bounce;
+    -moz-animation-name: bounce;
+    color: white;
+}
+
 
 #table {
     word-wrap: break-word;

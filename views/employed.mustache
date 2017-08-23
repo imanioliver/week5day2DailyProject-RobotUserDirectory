@@ -7,7 +7,7 @@
         <img src="{{avatar}}" alt="avatar">
     </div>
     <h1>{{name}}</h1>
-    <section> <p>{{#address.city}}{{.}}{{/address.city}}{{^address.city}} Unknown City {{/address.city}},</p> <a href="/listing/{{address.country}}"><p>{{address.country}} </p> </a>|
+    <section> <p>{{#address.city}}{{.}}{{/address.city}}{{^address.city}} Unknown City {{/address.city}},</p> <a href="/{{address.country}}"><p>{{address.country}} </p> </a>
         {{#job}}
         {{job}}, {{company}}
         {{/job}}

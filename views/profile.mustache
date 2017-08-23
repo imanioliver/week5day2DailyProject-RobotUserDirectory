@@ -1,14 +1,39 @@
-<div class="listingLink" href="/listing/{{id}}">
-    <div class="listing">
-        <img class="listingAvatar" src="{{avatar}}" alt="avatar">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../main.css">
+  </head>
+  <body>
 
-        <p class="name">{{name}}</p>
+<div class="userProfile">
+      <img src="{{avatar}}" alt="{{name}}"/>
+      <h3>{{name}}</h3>
 
-        {{#job}}
-            <p> {{.}}, {{company}}  </p>
-                {{/job}}
-                {{^job}}
-            <p class="available"> Available for hire</p>
-                {{/job}}
-    </div>
-</div>
+
+      {{#job}}
+      <p> {{company}}</p>
+      <p>{{job}}</p>
+      {{/job}}
+      {{^job}}
+      <p id="noJob">Available for Hire</p>
+      {{/job}}
+
+      <p>{{address.country}}</p>
+
+      <p>{{email}}, {{phone}}</p>
+
+      {{#university}}
+        <p>Education:{{university}}</p>
+        <p>Skills: {{skills}}</p>
+      {{/university}}
+      {{^university}}
+        <p>Skills: {{skills}}</p>
+      {{/university}}
+
+
+
+  </div>
+</body>
+</html>

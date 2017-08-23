@@ -22,7 +22,7 @@ const getListings = function(req, res, next) {
     let getData = function (db, callback) { //it calls, needs a database and gives a callback function,
         let users = db.collection("users"); //sets the variable "user" to the dataabase we have. same as "db.users" that we did earlier
 
-        users.find({}).toArray().then(function(users){ //find all of the users, .toArray returns a promise, THEN set the info i received into a variable call data, then I do my callback function from line 16
+        users.find({}).sort({"name": 1}).toArray().then(function(users){ //find all of the users, .toArray returns a promise, THEN set the info i received into a variable call data, then I do my callback function from line 16
             data = users; //set the 50 objects = to the data object at the top
             callback();
         });
@@ -48,7 +48,7 @@ const getLooking = function(req, res, next) {
     let getData = function (db, callback) { //it calls, needs a database and gives a callback function,
         let users = db.collection("users"); //sets the variable "user" to the dataabase we have. same as "db.users" that we did earlier
 
-        users.find({"job": null}).toArray().then(function(users){ //find all of the users, .toArray returns a promise, THEN set the info i received into a variable call data, then I do my callback function from line 16
+        users.find({"job": null}).sort({"name": 1}).toArray().then(function(users){ //find all of the users, .toArray returns a promise, THEN set the info i received into a variable call data, then I do my callback function from line 16
             data = users; //set the 50 objects = to the data object at the top
             callback();
         });
@@ -74,7 +74,7 @@ const getEmployed = function(req, res, next) {
     let getData = function (db, callback) { //it calls, needs a database and gives a callback function,
         let users = db.collection("users"); //sets the variable "user" to the dataabase we have. same as "db.users" that we did earlier
 
-        users.find({"job": {$nin: [null]}}).toArray().then(function(users){ //find all of the users, .toArray returns a promise, THEN set the info i received into a variable call data, then I do my callback function from line 16
+        users.find({"job": {$nin: [null]}}).sort({"name": 1}).toArray().then(function(users){ //find all of the users, .toArray returns a promise, THEN set the info i received into a variable call data, then I do my callback function from line 16
             data = users; //set the 50 objects = to the data object at the top
             callback();
         });
@@ -97,10 +97,12 @@ const getCountry = function(req, res, next) {
         });
     });
 
+
+    let country = req.params.country;
     let getData = function (db, callback) { //it calls, needs a database and gives a callback function,
         let users = db.collection("users"); //sets the variable "user" to the dataabase we have. same as "db.users" that we did earlier
 
-        users.find({}).toArray().then(function(users){ //find all of the users, .toArray returns a promise, THEN set the info i received into a variable call data, then I do my callback function from line 16
+        users.find({"address.country": country}).sort({"name": 1}).toArray().then(function(users){ //find all of the users, .toArray returns a promise, THEN set the info i received into a variable call data, then I do my callback function from line 16
 
             data = users; //set the 50 objects = to the data object at the top
             callback();
@@ -127,14 +129,14 @@ router.get('/employed', getEmployed, function (req, res) {
 
 
 
-router.get('/country', getCountry, function(req, res){
-    // let country = req.params.address.country; //req comes from the parent(grab from client), params for when you build with dynamic route, and every time you call params (a property object that exists on the req object), it allows you to call dynamic parts of the object (go the dynamic route with id, or with name etc. )
-    // let user = data.find(function(user){
-    //     return user.address.country==country; //please return any user.id that equals the id that was clicked
-    // })
-    //
-    //
-    // console.log(req.params.address.country);
+router.get('/listing/country', getCountry, function(req, res){
+    let country = req.params.address.country; //req comes from the parent(grab from client), params for when you build with dynamic route, and every time you call params (a property object that exists on the req object), it allows you to call dynamic parts of the object (go the dynamic route with id, or with name etc. )
+    let user = data.find(function(user){
+        return user.address.country==country; //please return any user.id that equals the id that was clicked
+    })
+
+
+    console.log(req.params.address.country);
     res.render('country', {users:data});
     // res.send("YAY");
 });

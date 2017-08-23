@@ -6,8 +6,13 @@
     <div class="avatar">
         <img src="{{avatar}}" alt="avatar">
     </div>
+
     <h1>{{name}}</h1>
-    <section> <p>{{#address.city}}{{.}}{{/address.city}}{{^address.city}} Unknown City {{/address.city}},</p> <a href="/listing/{{address.country}}"><p>{{address.country}} </p> </a>|
+    <section>
+        <div class="addressLine">
+            <p id="city">{{#address.city}}{{.}}{{/address.city}}{{^address.city}} Unknown City{{/address.city}}</p>
+            <p id="country"><a href="/listing/{{address.country}}">{{address.country}}</a></p>
+        </div>
         {{#job}}
         {{job}}, {{company}}
         {{/job}}
@@ -15,7 +20,7 @@
         <p id=redAvailable>Available for hire</p>
         {{/job}}</section>
         <a href="/listing/{{id}}">
-            <p>{{name}}'s Profile!</p>
+            <p id= "profileLink">View {{name}}'s' Profile</p>
         </a>
         <p id="table">
 
