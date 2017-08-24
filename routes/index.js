@@ -3,7 +3,7 @@ const router = express.Router();
 // const Data = require ('../models/data.js')
 
 let data =[];
-
+//
 const getListings = function(req, res, next) {
     const MongoClient = require('mongodb').MongoClient; //reference to the Mongo client
     const assert = require('assert'); //test to see if we have errors
@@ -108,6 +108,9 @@ const getCountry = function(req, res, next) {
 
     };
 };
+
+
+
 
 router.get("/", getListings, function(req, res){
     res.render("listing", {users: data})
