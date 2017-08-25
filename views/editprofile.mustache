@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="../app.css">
+
+<div class="userProfile">
+      <img src="{{avatar}}" alt="{{name}}"/>
+      <h3>{{name}}</h3>
+
+
+      {{#job}}
+      <p> {{company}}</p>
+      <p>{{job}}</p>
+      {{/job}}
+      {{^job}}
+      <p id="noJob">Available for Hire</p>
+      {{/job}}
+
+      <p>{{address.country}}</p>
+
+      <p>{{email}}, {{phone}}</p>
+
+      {{#university}}
+        <p><strong>Education:</strong>{{university}}</p>
+        <p><strong>Skills:</strong> {{skills}}</p>
+      {{/university}}
+      {{^university}}
+        <p>Skills: {{skills}}</p>
+      {{/university}}
+
+
+
+  </div>
+  <div class="editingArea">
+{{#users}}
+      <form class="signupForm" action="/update/{{_id}}" method="post">
+          <p>Sign up for RoboLink!</p>
+          <p>Choose a Username and Password for Your RoboProfile</p>
+        <input type="text" name="username" value="{{username}}" > <br>
+
+        <input type="password" name="password" value="{{password}}" placeholder="Password"> <br>
+        <p>Tell Us More About Yourself</p>
+
+        <input type="text" name="name" value="{{name}}" placeholder="First and Last Name"> <br>
+        <input type="text" name="avatar" value="{{avatar}}" placeholder="Enter Avatar URL"> <br>
+        <input type="text" name="email" value="{{email}}" placeholder="Email"> <br>
+
+        <p>Education and Work Info</p>
+
+        <input type="text" name="university" value="{{university}}" placeholder="University"> <br>
+        <input type="text" name="job" value="{{job}}" placeholder="Job"> <br>
+        <input type="text" name="company" value="{{company}}" placeholder="Company"> <br>
+        <input type="text" name="skills" value="{{skills}}" placeholder="Skills"> <br>
+
+        <p>Contact Information</p>
+        <input type="text" name="phone" value="{{phone}}" placeholder="Phone"> <br>
+       <p>address</p>
+        <input type="text" name="streetNum" value="{{address.street_num}}" placeholder="Street Number"> <br>
+        <input type="text" name="streetName" value="{{address.street_name}}" placeholder="Street Name"> <br>
+        <input type="text" name="city" value="{{address.city}}" placeholder="City"> <br>
+        <input type="text" name="stateProvince" value="{{address.state_or_province}}" placeholder="State or Province"> <br>
+        <input type="text" name="postalCode" value="{{address.postal_code}}" placeholder="Postal Code"> <br>
+        <input type="text" name="country" value="{{address.country}}" placeholder="Country"> <br>
+        <button type="submit" name="button">Update Profile</button>
+      </form>
+{{/users}}
+  </div>
+</body>
+</html>

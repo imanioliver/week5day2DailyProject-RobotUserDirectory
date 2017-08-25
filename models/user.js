@@ -5,10 +5,10 @@ const Schema = mongoose.Schema;
 // const User = require("../models/user");
 
 
-const userSchema = new mongoose.Schema({
+const userSchema = new Schema({
 
     username: {type: String, required: true, unique: true},
-    passwordHash: {type: String, required: true, unique: true},
+    passwordHash: {type: String},
     name: {type: String, required: true},
     avatar:{type: String},
     email: {type: String, required: true, unique: true},
@@ -27,6 +27,9 @@ const userSchema = new mongoose.Schema({
         }
 
 });
+
+
+
 
 
 userSchema.virtual('password')
