@@ -2,11 +2,32 @@ const mongoose = require("mongoose");
 mongoose.Promise = require("bluebird");
 const bcrypt = require('bcryptjs');
 const Schema = mongoose.Schema;
+// const User = require("../models/user");
+
 
 const userSchema = new mongoose.Schema({
-  username: { type: String, unique: true, lowercase: true, required: true },
-  passwordHash: { type: String, required: true }
+
+    username: {type: String, required: true, unique: true},
+    passwordHash: {type: String, required: true, unique: true},
+    name: {type: String, required: true},
+    avatar:{type: String},
+    email: {type: String, required: true, unique: true},
+    university: String,
+    job: String,
+    company: String,
+    skills: [String],
+    phone: String,
+    address: {
+        street_num: Number,
+        street_name: String,
+        city: String,
+        state_or_province: String,
+        postal_code: Number,
+        country: String
+        }
+
 });
+
 
 userSchema.virtual('password')
     .get(function() {
